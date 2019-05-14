@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#FFC107"
+	android:orientation="vertical"
+	tools:context=".ui.FirstActivity">
+
+	<ImageView
+		android:layout_width="320dp"
+		android:layout_height="120dp"
+		android:layout_gravity="center"
+		android:layout_marginTop="100dp"
+		android:background="@drawable/font" />
+	<LinearLayout
+		android:layout_width="410dp"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="30dp"
+		android:gravity="center">
+
+		<ImageButton
+			android:id="@+id/camera_button"
+			android:layout_width="60dp"
+			android:layout_height="60dp"
+			android:layout_gravity="center"
+			android:onClick="FaceScore"
+			android:background="@drawable/camera4"
+			android:baselineAligned="false" />
+
+		<ImageButton
+			android:id="@+id/image_button"
+			android:layout_width="60dp"
+			android:layout_height="60dp"
+			android:layout_marginLeft="100dp"
+			android:background="@drawable/image_camera4"
+			android:baselineAligned="false" />
+
+	</LinearLayout>
+
+
+</LinearLayout>
