@@ -16,7 +16,7 @@ public class FirstActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_first);
-		camera_img = (ImageButton)findViewById(R.id.camera_button);
+		camera_img = (ImageButton)findViewById(R.id.face_detect);
 
 		camera_img.setOnClickListener(new View.OnClickListener() {
 			@Override

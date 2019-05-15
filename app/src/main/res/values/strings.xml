@@ -5,4 +5,6 @@
 	<string name="emotion">情绪分析：</string>
 	<string name="album">Photo album</string>
 	<string name="camera">Camera</string>
+	<string name="faceplus">Face++</string>
+	<string name="grah">Photography</string>
 </resources>
