@@ -7,37 +7,82 @@
 	android:background="#FFC107"
 	android:orientation="vertical"
 	tools:context=".ui.FirstActivity">
+	<android.support.constraint.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="400dp">
 
-	<ImageView
-		android:layout_width="320dp"
-		android:layout_height="120dp"
-		android:layout_gravity="center"
-		android:layout_marginTop="100dp"
-		android:background="@drawable/font" />
-	<LinearLayout
-		android:layout_width="410dp"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="30dp"
-		android:gravity="center">
+		<ImageView
+			android:id="@+id/imageView2"
+			android:layout_width="320dp"
+			android:layout_height="120dp"
+			android:layout_gravity="center"
+			android:layout_marginTop="16dp"
+			android:background="@drawable/font"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHorizontal_bias="0.494"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
 
 		<ImageButton
 			android:id="@+id/camera_button"
 			android:layout_width="60dp"
 			android:layout_height="60dp"
 			android:layout_gravity="center"
-			android:onClick="FaceScore"
+			android:layout_marginStart="8dp"
+			android:layout_marginTop="180dp"
+			android:layout_marginEnd="76dp"
 			android:background="@drawable/camera4"
-			android:baselineAligned="false" />
+			android:baselineAligned="false"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHorizontal_bias="0.916"
+			app:layout_constraintStart_toEndOf="@+id/image_button"
+			app:layout_constraintTop_toTopOf="parent" />
 
 		<ImageButton
 			android:id="@+id/image_button"
 			android:layout_width="60dp"
 			android:layout_height="60dp"
-			android:layout_marginLeft="100dp"
+			android:layout_marginStart="76dp"
 			android:background="@drawable/image_camera4"
-			android:baselineAligned="false" />
+			android:baselineAligned="false"
+			app:layout_constraintBottom_toBottomOf="@+id/camera_button"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="@+id/camera_button"
+			app:layout_constraintVertical_bias="0.0" />
 
-	</LinearLayout>
+		<TextView
+			android:id="@+id/textView"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="20dp"
+			android:layout_marginBottom="8dp"
+			android:text="@string/album"
+			android:textColor="#ffff"
+			android:textSize="20sp"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="@+id/image_button"
+			app:layout_constraintHorizontal_bias="0.509"
+			app:layout_constraintStart_toStartOf="@+id/image_button"
+			app:layout_constraintTop_toBottomOf="@+id/image_button"
+			app:layout_constraintVertical_bias="0.0" />
+
+		<TextView
+			android:id="@+id/textView3"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="8dp"
+			android:layout_marginBottom="8dp"
+			android:text="@string/camera"
+			android:textColor="#ffff"
+			android:textSize="20sp"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="@+id/camera_button"
+			app:layout_constraintHorizontal_bias="0.0"
+			app:layout_constraintStart_toStartOf="@+id/camera_button"
+			app:layout_constraintTop_toBottomOf="@+id/camera_button"
+			app:layout_constraintVertical_bias="0.148" />
+	</android.support.constraint.ConstraintLayout>
+
 
 
 </LinearLayout>
