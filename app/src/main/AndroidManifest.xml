@@ -14,6 +14,7 @@
 		android:roundIcon="@mipmap/ic_launcher_round"
 		android:supportsRtl="true"
 		android:theme="@style/AppTheme">
+		<activity android:name=".ui.FacePlusActivity"></activity>
 		<activity android:name=".ui.FirstActivity">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
