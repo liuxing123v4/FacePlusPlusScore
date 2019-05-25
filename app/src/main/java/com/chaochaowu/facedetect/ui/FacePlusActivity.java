@@ -33,20 +33,20 @@ public class FacePlusActivity extends AppCompatActivity implements Runnable{
 			public void handleMessage(Message msg) {
 				if(msg.what==5){
 					Bundle bdl = (Bundle)msg.obj;
-					dollarRate = bdl.getFloat("dollar_rate");
-					euroRate = bdl.getFloat("euro_rate");
-					wonRate = bdl.getFloat("won_rate");
+//					dollarRate = bdl.getFloat("dollar_rate");
+//					euroRate = bdl.getFloat("euro_rate");
+//					wonRate = bdl.getFloat("won_rate");
 
 					//保存更新的日期
-					SharedPreferences sharedPreferences = getSharedPreferences("my_rate", Activity.MODE_PRIVATE);
-					SharedPreferences.Editor editor = sharedPreferences.edit();
-					editor.putString("updata_date",todayStr);
-					editor.apply();
+//					SharedPreferences sharedPreferences = getSharedPreferences("my_rate", Activity.MODE_PRIVATE);
+//					SharedPreferences.Editor editor = sharedPreferences.edit();
+//					editor.putString("updata_date",todayStr);
+//					editor.apply();
 
-					Log.i(TAG, "handleMessage: dollarRate:"+dollarRate);
-					Log.i(TAG, "handleMessage: euroRate:"+euroRate);
-					Log.i(TAG, "handleMessage: wonRate:"+wonRate);
-					Toast.makeText(RateActivity.this,"汇率已更新",Toast.LENGTH_SHORT).show();
+//					Log.i(TAG, "handleMessage: dollarRate:"+dollarRate);
+//					Log.i(TAG, "handleMessage: euroRate:"+euroRate);
+//					Log.i(TAG, "handleMessage: wonRate:"+wonRate);
+					Toast.makeText(FacePlusActivity.this,"汇率已更新",Toast.LENGTH_SHORT).show();
 				}
 				super.handleMessage(msg);
 			}
@@ -65,7 +65,7 @@ public class FacePlusActivity extends AppCompatActivity implements Runnable{
 		}
 		//用于保存获取的汇率
 		Bundle bundle;
-		bundle = getFromUsdCny();
+		bundle = getFromDoudou();
 
 		//获取网络数据
 //        URL url = null;
@@ -82,9 +82,6 @@ public class FacePlusActivity extends AppCompatActivity implements Runnable{
 //        }
 
 //        bundle = getFromBOC();
-
-
-
 		//获取Msg对象 用于返回主线程
 		Message msg = handler.obtainMessage(5);
 //        //msg.what = 5;
@@ -94,7 +91,7 @@ public class FacePlusActivity extends AppCompatActivity implements Runnable{
 
 	}
 	//    获取工商银行数据
-	private Bundle getFromBOC() {
+	private Bundle getFromDoudou() {
 		Document doc = null;
 		Bundle bundle = new Bundle();
 		try{
