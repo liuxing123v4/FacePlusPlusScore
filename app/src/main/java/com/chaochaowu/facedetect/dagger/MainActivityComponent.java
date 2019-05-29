@@ -7,7 +7,6 @@ import dagger.Component;
 
 /**
  * MainActivity 的组件
- * @author chaochaowu
  */
 @Component(modules = {MainPresenterModule.class})
 public interface MainActivityComponent {

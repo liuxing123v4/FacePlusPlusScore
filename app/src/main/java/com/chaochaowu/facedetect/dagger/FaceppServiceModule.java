@@ -13,8 +13,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * 提供 FaceppService
- * @author chaochaowu
  */
+
 @Module
 public class FaceppServiceModule {
 

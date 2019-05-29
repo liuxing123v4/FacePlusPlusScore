@@ -46,6 +46,10 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import cn.bmob.v3.datatype.BmobFile;
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.UploadFileListener;
+import cn.bmob.v3.util.BmobContentProvider;
 
 /**
  * 主界面
@@ -104,6 +108,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     @OnClick(R.id.button)
     public void onButtonClicked() {
         takePhoto();
+        faces.add(new FaceppBean.FacesBean());
     }
 
     private void gotoDetailActivity(FaceppBean.FacesBean face,TextView tvBeauty) {
@@ -180,6 +185,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         mTmpFile = new File(path, filename + ".jpg");
         mTmpFile.getParentFile().mkdirs();
         String authority = getPackageName() + ".provider";
+
         imageUri = FileProvider.getUriForFile(this, authority, mTmpFile);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
         startActivityForResult(intent, CAMERA_REQUEST_CODE);

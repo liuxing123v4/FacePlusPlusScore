@@ -96,11 +96,11 @@ public class DetailActivity extends AppCompatActivity {
         FaceppBean.FacesBean.AttributesBean.EmotionBean emotion = attributes.getEmotion();
         s = new StringBuilder()
                 .append("愤怒 ").append(emotion.getAnger()).append("%")
-                .append("\n厌恶 ").append(emotion.getDisgust()).append("%")
+                .append("        厌恶 ").append(emotion.getDisgust()).append("%")
                 .append("\n恐惧 ").append(emotion.getFear()).append("%")
-                .append("\n高兴 ").append(emotion.getHappiness()).append("%")
+                .append("        高兴 ").append(emotion.getHappiness()).append("%")
                 .append("\n平静 ").append(emotion.getNeutral()).append("%")
-                .append("\n伤心 ").append(emotion.getSadness()).append("%")
+                .append("        伤心 ").append(emotion.getSadness()).append("%")
                 .append("\n惊讶 ").append(emotion.getSurprise()).append("%\n\n")
                 .toString();
         tvEmotion.setText(s);

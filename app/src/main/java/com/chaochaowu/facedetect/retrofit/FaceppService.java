@@ -9,7 +9,6 @@ import retrofit2.http.POST;
 
 /**
  * retrofit 面部识别请求的网络服务
- * @author chaochaowu
  */
 public interface FaceppService {
 

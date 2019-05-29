@@ -6,7 +6,6 @@ import com.chaochaowu.facedetect.bean.FaceppBean;
 
 /**
  * 在 EventBus 中，用于 MainActivity 和 DetailActivity 之间面部识别信息的传递
- * @author chaochaowu
  */
 public class FaceEvent {
 

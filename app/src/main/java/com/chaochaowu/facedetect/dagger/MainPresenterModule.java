@@ -8,7 +8,6 @@ import dagger.Provides;
 
 /**
  * 提供Presenter
- * @author chaochaowu
  */
 @Module
 public class MainPresenterModule {

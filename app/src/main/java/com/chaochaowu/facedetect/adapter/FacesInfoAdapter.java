@@ -20,7 +20,6 @@ import java.util.List;
 /**
  * MainActivity 中 recyclerView 的 Adapter，用于已识别面部信息的展示
  * 并为 item 设置点击事件用于 item 点击后跳转至面部识别详情界面
- * @author chaochaowu
  */
 public class FacesInfoAdapter extends RecyclerView.Adapter<FacesInfoAdapter.MyViewHolder> {
 
@@ -52,11 +51,11 @@ public class FacesInfoAdapter extends RecyclerView.Adapter<FacesInfoAdapter.MyVi
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
         if (photo == null || faces.get(0).getAttributes() == null){
-            holder.ivFace.setImageBitmap(null);
-            holder.tvSex.setText("");
-            holder.tvAge.setText("");
-            holder.tvBeauty.setText("");
-            holder.tvBeautyTip.setText("");
+            holder.ivFace.setImageResource(R.drawable.caitou);
+            holder.tvSex.setText("性别：男");
+            holder.tvAge.setText("年龄：21");
+            holder.tvBeauty.setText("90.90");
+            holder.tvBeautyTip.setText("颜值");
             return;
         }
         final FaceppBean.FacesBean face = faces.get(position);
