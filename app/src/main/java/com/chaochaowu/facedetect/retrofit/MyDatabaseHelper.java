@@ -8,7 +8,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 	//创建数据库
 	public static final String CREATE_CONTACT = "create table person ("
 			+ "username varchar(80) primary key, " + "password varchar(80), "
-			+ "highscore int)";
+			+ "score double)";
 	private Context mcontext;
 
 	public MyDatabaseHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {

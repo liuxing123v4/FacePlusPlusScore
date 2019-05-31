@@ -1,5 +1,9 @@
 package com.chaochaowu.facedetect.ui;
 
+import android.content.ContentValues;
+import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -13,6 +17,7 @@ import android.widget.TextView;
 import com.chaochaowu.facedetect.R;
 import com.chaochaowu.facedetect.bean.FaceppBean;
 import com.chaochaowu.facedetect.eventbus.FaceEvent;
+import com.chaochaowu.facedetect.retrofit.MyDatabaseHelper;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -40,6 +45,20 @@ public class DetailActivity extends AppCompatActivity {
     TextView tvBeauty;
     @BindView(R.id.emotion)
     TextView tvEmotion;
+    private  String username;
+    private MyDatabaseHelper dbhelper;
+
+    public void setDbhelper(MyDatabaseHelper dbhelper) {
+        this.dbhelper = dbhelper;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +67,8 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
         ButterKnife.bind(this);
         EventBus.getDefault().register(this);
+        Intent intent = getIntent();
+        username = intent.getStringExtra("username");
     }
 
     @Override
@@ -104,6 +125,18 @@ public class DetailActivity extends AppCompatActivity {
                 .append("\n惊讶 ").append(emotion.getSurprise()).append("%\n\n")
                 .toString();
         tvEmotion.setText(s);
+        Double face_score = Double.parseDouble(String.format("%1.2f", "Male".equals(gender.getValue()) ? maleScore : femaleScore));
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+        Cursor cursor = db.query("person",new String[]{"score"},"username = ?",new String []{username},null,null,null);
+        if(cursor.moveToNext()){
+            Double dataBasehighScore = cursor.getDouble(cursor.getColumnIndex("score"));
+            if(face_score > dataBasehighScore){
+                //数据库的跟新
+                ContentValues values = new ContentValues();
+                values.put("score",face_score);
+                db.update("person",values,"username = ?",new String[]{username});
+            }}
+
     }
 
     @Override

@@ -53,7 +53,8 @@ public class MDLoginActivity extends AppCompatActivity {
 					if (dataBasePassword.equals(password)) {
 						//登录成功
 						Intent intent = new Intent(MDLoginActivity.this, FirstActivity.class);
-						intent.putExtra("username", username);
+						Intent intent_detail = new Intent(MDLoginActivity.this, DetailActivity.class);
+						intent_detail.putExtra("username", username);
 						startActivity(intent);
 					} else {
 						//密码输入失败

@@ -1,7 +1,11 @@
 package com.chaochaowu.facedetect.adapter;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
+import android.os.Debug;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +16,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.chaochaowu.facedetect.R;
 import com.chaochaowu.facedetect.bean.FaceppBean;
+import com.chaochaowu.facedetect.retrofit.MyDatabaseHelper;
 
 import java.util.List;
 
@@ -24,9 +29,11 @@ import java.util.List;
 public class FacesInfoAdapter extends RecyclerView.Adapter<FacesInfoAdapter.MyViewHolder> {
 
     private Context mContext;
+
     private List<FaceppBean.FacesBean> faces;
     private Bitmap photo;
     private onItemClickListener listener;
+
 
     public void setListener(onItemClickListener listener) {
         this.listener = listener;
@@ -82,13 +89,13 @@ public class FacesInfoAdapter extends RecyclerView.Adapter<FacesInfoAdapter.MyVi
         double maleScore = face.getAttributes().getBeauty().getMale_score();
         double femaleScore = face.getAttributes().getBeauty().getFemale_score();
         holder.tvBeauty.setText(String.format("%1.2f", "Male".equals(sex) ? maleScore : femaleScore));
-
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 listener.onItemClicked(face,holder.tvBeauty);
             }
-        });
+        })
+        ;
 
     }
 
