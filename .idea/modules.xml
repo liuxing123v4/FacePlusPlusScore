@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Face++Score.iml" filepath="$PROJECT_DIR$/Face++Score.iml" />
-      <module fileurl="file://$PROJECT_DIR$/FacePlusPlusScore2.iml" filepath="$PROJECT_DIR$/FacePlusPlusScore2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FacePlusPlusScore.iml" filepath="$PROJECT_DIR$/FacePlusPlusScore.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
