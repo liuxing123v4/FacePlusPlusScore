@@ -67,23 +67,23 @@ public class DetailActivity extends AppCompatActivity {
         Intent intent1 = getIntent();
         face_score = intent1.getFloatExtra("face_score", Float.parseFloat("0.0f"));
         button_up = (Button)findViewById(R.id.button_up);
-        button_up.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                SQLiteDatabase db = dbhelper.getWritableDatabase();
-                Cursor cursor = db.query("person",new String[]{"score"},"username = ?",new String []{username},null,null,null);
-                if(cursor.moveToNext()){
-                    Float dataBasehighScore = cursor.getFloat(cursor.getColumnIndex("score"));
-                    if(face_score > dataBasehighScore){
-                        //数据库的跟新
-                        ContentValues values = new ContentValues();
-                        values.put("score",face_score);
-                        db.update("person",values,"username = ?",new String[]{username});
-                        Log.i(TAG, "displayFaceInfo: "+"更新成功。。。。。。。。");
-                    }}
-            }
-        });
+//        button_up.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                SQLiteDatabase db = dbhelper.getWritableDatabase();
+//                Cursor cursor = db.query("person",new String[]{"score"},"username = ?",new String []{username},null,null,null);
+//                if(cursor.moveToNext()){
+//                    Float dataBasehighScore = cursor.getFloat(cursor.getColumnIndex("score"));
+//                    if(face_score > dataBasehighScore){
+//                        //数据库的跟新
+//                        ContentValues values = new ContentValues();
+//                        values.put("score",face_score);
+//                        db.update("person",values,"username = ?",new String[]{username});
+//                        Log.i(TAG, "displayFaceInfo: "+"更新成功。。。。。。。。");
+//                    }}
+//            }
+//        });
     }
 
     public void setDbhelper(MyDatabaseHelper dbhelper) {
@@ -151,9 +151,9 @@ public class DetailActivity extends AppCompatActivity {
                 .append("\n惊讶 ").append(emotion.getSurprise()).append("%\n\n")
                 .toString();
         tvEmotion.setText(s);
-        Float face_score = Float.parseFloat(String.format("%1.2f", "Male".equals(gender.getValue()) ? maleScore : femaleScore));
-        Intent intent_score = new Intent(DetailActivity.this, DetailActivity.class);
-        intent_score.putExtra("face_score", face_score);
+//        Float face_score = Float.parseFloat(String.format("%1.2f", "Male".equals(gender.getValue()) ? maleScore : femaleScore));
+//        Intent intent_score = new Intent(DetailActivity.this, DetailActivity.class);
+//        intent_score.putExtra("face_score", face_score);
     }
 
     @Override

@@ -14,6 +14,7 @@ public class FirstActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_first);
+		getSupportActionBar().hide();
 		camera_img = (ImageButton)findViewById(R.id.face_detect);
 //		Bmob.initialize(this,"d116f11d641d99b83c9c43895ce7b62b");
 		camera_img.setOnClickListener(new View.OnClickListener() {

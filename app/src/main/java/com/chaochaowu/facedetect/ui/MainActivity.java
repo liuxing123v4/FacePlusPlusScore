@@ -85,8 +85,8 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
+        getSupportActionBar().hide();
         ButterKnife.bind(this);
         DaggerMainActivityComponent.builder()
                 .mainPresenterModule(new MainPresenterModule(this))
