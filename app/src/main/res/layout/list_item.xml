@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="排行榜"/>
+	<TextView
+		android:id="@+id/itemTitle"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:textSize="20sp"
+		android:text="@string/app_name"
+		android:textColor="@color/colorPrimary"
+		/>
+
+	<TextView
+		android:id="@+id/itemDetail"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="right"
+		android:text="@string/app_name"
+		android:textSize="15sp" />
+</LinearLayout>
