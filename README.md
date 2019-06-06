@@ -1,6 +1,9 @@
-# FaceDetect
+# FaceScorer++
 Android人脸识别app——基于Face++ | MVP+Retofit+RxJava+Dagger高度解耦
 
-![面部识别主界面](https://upload-images.jianshu.io/upload_images/12266363-31e31a5672b3065e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-![面部识别详情界面](https://upload-images.jianshu.io/upload_images/12266363-7e27ecef63a5eed4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-![多人脸识别](https://upload-images.jianshu.io/upload_images/12266363-d2bc53f978a9451c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![splash页面](https://github.com/liuxing123v4/images/blob/master/splash.jpg)
+![登陆页面](https://github.com/liuxing123v4/images/blob/master/login.jpg)
+![主页面](https://github.com/liuxing123v4/images/blob/master/main.jpg)
+![人脸拍照](https://github.com/liuxing123v4/images/blob/master/kunkun.jpg)
+![我的](https://github.com/liuxing123v4/images/blob/master/me%20(2).jpg)
+![情绪识别](https://github.com/liuxing123v4/images/blob/master/my_mood.jpg)
