@@ -3,7 +3,6 @@ package com.chaochaowu.facedetect.ui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -11,11 +10,10 @@ import com.chaochaowu.facedetect.R;
 
 import org.litepal.LitePal;
 
-import cn.bmob.v3.Bmob;
-
 public class FirstActivity extends AppCompatActivity {
 	ImageButton camera_img;
 	ImageButton faceplus_button;
+
 	private String username;
 
 	final String TAG ="First.activity";
@@ -40,14 +38,15 @@ public class FirstActivity extends AppCompatActivity {
 		});
 		faceplus_button = (ImageButton) findViewById(R.id.faceplus_button);
 		faceplus_button.setOnClickListener(new View.OnClickListener() {
-			@Override
+
 			public void onClick(View view) {
-				LitePal.getDatabase();
-				Log.i(TAG, "onClick: "+"数据库创建成功");
+				Intent list = new Intent(FirstActivity.this, RankListViewActivity.class);
+				startActivity(list);
 			}
 		});
 
 
 	}
-	}
+
+}
 
