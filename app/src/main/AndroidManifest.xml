@@ -19,9 +19,7 @@
 		android:roundIcon="@mipmap/ic_launcher_round"
 		android:supportsRtl="true"
 		android:theme="@style/AppTheme">
-		<activity android:name=".ui.SplashActivity">
-
-		</activity>
+		<activity android:name=".ui.SplashActivity"></activity>
 		<activity android:name=".ui.RegisterActivity" />
 		<activity android:name=".ui.MDLoginActivity">
 			<intent-filter>
@@ -49,7 +47,7 @@
 				android:resource="@xml/file_paths" />
 		</provider>
 
-		<activity android:name=".ui.MainActivity"></activity>
+		<activity android:name=".ui.MainActivity" />
 		<activity android:name=".ui.DetailActivity" />
 	</application>
 

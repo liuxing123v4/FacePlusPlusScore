@@ -16,15 +16,20 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.chaochaowu.facedetect.R;
 import com.chaochaowu.facedetect.bean.FaceppBean;
+import com.chaochaowu.facedetect.bean.PersonInfo;
 import com.chaochaowu.facedetect.eventbus.FaceEvent;
 import com.chaochaowu.facedetect.retrofit.MyDatabaseHelper;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
+import org.litepal.crud.DataSupport;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -60,12 +65,12 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
+        Intent intent = getIntent();
+        username = intent.getStringExtra("username");
+        Log.i(TAG, "onCreate: "+username);
         setContentView(R.layout.activity_detail);
         ButterKnife.bind(this);
         EventBus.getDefault().register(this);
-        Intent intent1 = getIntent();
-        face_score = intent1.getFloatExtra("face_score", Float.parseFloat("0.0f"));
-        dbhelper = new MyDatabaseHelper(this,"Person.db",null,1);
     }
 
     public void setDbhelper(MyDatabaseHelper dbhelper) {
@@ -134,20 +139,25 @@ public class DetailActivity extends AppCompatActivity {
                 .append("\n惊讶 ").append(emotion.getSurprise()).append("%\n\n")
                 .toString();
         tvEmotion.setText(s);
-        final Float face_score = Float.parseFloat(String.format("%1.2f", "Male".equals(gender.getValue()) ? maleScore : femaleScore));
+        final double face_score = Double.parseDouble(String.format("%1.2f", "Male".equals(gender.getValue()) ? maleScore : femaleScore));
         Log.i(TAG, "displayFaceInfo: "+face_score);
-        Intent intent = getIntent();
-        username = intent.getStringExtra("username");
+
         button_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                List<PersonInfo>list = DataSupport.where("username=?",username).find(PersonInfo.class);
+                Log.i(TAG, "onClick: "+"当前数据为"+ list.get(0).getScore());
+                double now_score = list.get(0).getScore();
+                if(now_score<face_score){
+                    PersonInfo person = new PersonInfo();
+                    person.setScore(face_score);
+                    Log.i(TAG, "onClick: "+"数据已更新");
+                    person.updateAll("username = ?",username);
+                    Toast.makeText(DetailActivity.this,"恭喜您上榜成功，您离颜值巅峰更近一步",Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(DetailActivity.this,"不要上榜啦，您颜值报表liao！！！",Toast.LENGTH_LONG).show();
 
-                SQLiteDatabase db = dbhelper.getWritableDatabase();
-                ContentValues values = new ContentValues();
-                values.put("score",face_score);
-                //查看是否插入正确
-                db.update("person", values,"username = ?",new String[]{username});
-                Log.i(TAG, "displayFaceInfo: "+"更新成功。。。。。。。。");
+                }
             }
         });
     }

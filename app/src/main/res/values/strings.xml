@@ -7,4 +7,5 @@
 	<string name="camera">Camera</string>
 	<string name="faceplus">Face++</string>
 	<string name="grah">Photography</string>
+	<string name="title_activity_rank_list_view">RankListView</string>
 </resources>

@@ -16,6 +16,8 @@ import cn.bmob.v3.Bmob;
 public class FirstActivity extends AppCompatActivity {
 	ImageButton camera_img;
 	ImageButton faceplus_button;
+	private String username;
+
 	final String TAG ="First.activity";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,11 +26,14 @@ public class FirstActivity extends AppCompatActivity {
 		getSupportActionBar().hide();
 		LitePal.initialize(this);
 		camera_img = (ImageButton)findViewById(R.id.face_detect);
+		Intent intent = getIntent();
+		username = intent.getStringExtra("username");
 //		Bmob.initialize(this,"d116f11d641d99b83c9c43895ce7b62b");
 		camera_img.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
 				Intent intent = new Intent(FirstActivity.this, MainActivity.class);
+				intent.putExtra("username",username);
 				startActivity(intent);
 
 			}

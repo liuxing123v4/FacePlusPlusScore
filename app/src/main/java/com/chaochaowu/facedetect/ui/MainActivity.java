@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
     @Inject
     MainPresenter mPresenter;
-
+    private String username;
     FacesInfoAdapter mAdapter;
     private List<FaceppBean.FacesBean> faces;
 
@@ -92,6 +92,8 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
                 .mainPresenterModule(new MainPresenterModule(this))
                 .build()
                 .inject(this);
+        Intent intent = getIntent();
+        username = intent.getStringExtra("username");
         faces = new ArrayList<>();
         faces.add(new FaceppBean.FacesBean());
         mAdapter = new FacesInfoAdapter(this,faces,photo);
@@ -116,6 +118,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
             return;
         }
         Intent intent = new Intent(this,DetailActivity.class);
+        intent.putExtra("username",username);
         android.support.v4.util.Pair<View, String> image = new android.support.v4.util.Pair(imageView, "image");
         android.support.v4.util.Pair<View, String> beauty = new android.support.v4.util.Pair(tvBeauty, "beauty");
         ActivityOptionsCompat optionsCompat =

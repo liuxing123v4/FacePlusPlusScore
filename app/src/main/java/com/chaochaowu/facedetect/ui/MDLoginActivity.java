@@ -69,6 +69,8 @@ public class MDLoginActivity extends AppCompatActivity {
 					{
 						Log.i(TAG, "onClick: 登录一下");
 						Intent intent = new Intent(MDLoginActivity.this, FirstActivity.class);
+						Intent intent1 = new Intent(MDLoginActivity.this, DetailActivity.class);
+						intent.putExtra("username",username);
 						startActivity(intent);
 						Toast.makeText(MDLoginActivity.this,"登录成功",Toast.LENGTH_SHORT).show();
 						break;
