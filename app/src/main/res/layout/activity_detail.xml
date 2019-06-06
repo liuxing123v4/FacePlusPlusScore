@@ -132,8 +132,8 @@
 
             <Button
                 android:id="@+id/button_up"
-                android:layout_width="85dp"
-                android:layout_height="80dp"
+                android:layout_width="53dp"
+                android:layout_height="76dp"
 
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
@@ -142,10 +142,10 @@
                 android:text="上\n\n榜"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.976"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView"
-                app:layout_constraintVertical_bias="0.725" />
+                app:layout_constraintVertical_bias="0.966" />
 
         </android.support.constraint.ConstraintLayout>
 

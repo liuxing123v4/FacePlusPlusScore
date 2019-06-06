@@ -6,20 +6,30 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.chaochaowu.facedetect.R;
+import com.chaochaowu.facedetect.bean.PersonInfo;
 import com.chaochaowu.facedetect.retrofit.MyDatabaseHelper;
 
+import org.litepal.crud.DataSupport;
+import org.litepal.tablemanager.Connector;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class RegisterActivity extends AppCompatActivity {
+	final String TAG = "Register";
 	private EditText usernameEditText;
 	private EditText passwordEditText;
 	private EditText configPasswordEditText;
 	private String username,password,configPassword;
 	private TextView link_login;
+	private List<PersonInfo> list=new ArrayList<>();
 	//注册按钮
 	private Button registerBtn;
 	//数据库使用
@@ -34,6 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
 		registerBtn = (Button) findViewById(R.id.register);
 		dbhelper = new MyDatabaseHelper(this,"Person.db",null,1);
 		//回退事件
+		Connector.getDatabase();
 		link_login = (TextView)findViewById(R.id.link_login);
 		link_login.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -50,16 +61,23 @@ public class RegisterActivity extends AppCompatActivity {
 				username = usernameEditText.getText().toString();
 				password = passwordEditText.getText().toString();
 				configPassword = configPasswordEditText.getText().toString();
-				if(password.equals(configPassword)){
-					//进行数据库的插入
-					SQLiteDatabase db = dbhelper.getReadableDatabase();
-					ContentValues values = new ContentValues();
-					values.put("username",username);
-					values.put("password",password);
-					values.put("highscore",0);
+				list= DataSupport.where("username = ?",username).find(PersonInfo.class);
+				Log.i(TAG, "onClick: "+list.size());
+				if(list.size()!=0){
+					AlertDialog.Builder dialog = new AlertDialog.Builder(RegisterActivity.this);
+					dialog.setTitle("提醒");
+					dialog.setMessage("该用户已经存在");
+					dialog.setCancelable(false);
+					dialog.setPositiveButton("确定",null);
+					dialog.show();
+				}else{
+					PersonInfo person = new PersonInfo();
+					person.setUsername(username);
+					person.setPassword(password);
+					person.setScore(0.0);
+					person.save();
 					//查看是否插入正确
-					Long l = db.insert("person", null, values);
-					if(l != -1) {
+					if (person.isSaved()) {
 						AlertDialog.Builder dialog = new AlertDialog.Builder(RegisterActivity.this);
 						dialog.setTitle("恭喜您");
 						dialog.setMessage("注册成功");
@@ -68,29 +86,28 @@ public class RegisterActivity extends AppCompatActivity {
 						dialog.show();
 						//到mainActivity中
 						Intent intent = new Intent(RegisterActivity.this, FirstActivity.class);
-						intent.putExtra("username", username);
-
 						startActivity(intent);
-					}else{
-						AlertDialog.Builder dialog = new AlertDialog.Builder(RegisterActivity.this);
-						dialog.setTitle("提醒");
-						dialog.setMessage("该用户已经存在");
-						dialog.setCancelable(false);
-						dialog.setPositiveButton("确定",null);
-						dialog.show();
 					}
-				}else{
-					//提醒用户输入不相同
-					AlertDialog.Builder dialog = new AlertDialog.Builder(RegisterActivity.this);
-					dialog.setTitle("提醒");
-					dialog.setMessage("两次密码输入不相同");
-					dialog.setCancelable(false);
-					dialog.setPositiveButton("确定",null);
-					dialog.show();
 				}
+
+//				for (PersonInfo p:list) {
+//					if(p.getUsername().equals(username)){
+//
+//					}else if(!p.getUsername().equals(username)&&password.equals(configPassword)){
+
+//					}else{
+//					//提醒用户输入不相同
+//					AlertDialog.Builder dialog = new AlertDialog.Builder(RegisterActivity.this);
+//					dialog.setTitle("提醒");
+//					dialog.setMessage("两次密码输入不相同");
+//					dialog.setCancelable(false);
+//					dialog.setPositiveButton("确定",null);
+//					dialog.show();
+//				}
+
+
 			}
 		});
-
 
 	}
 }

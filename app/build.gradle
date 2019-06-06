@@ -28,6 +28,7 @@ android {
 }
 
 dependencies {
+    compile "org.litepal.android:core:1.4.1"
     implementation 'cn.bmob.android:bmob-sdk:3.7.3-rc1'
     implementation "io.reactivex.rxjava2:rxjava:2.2.2"
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
