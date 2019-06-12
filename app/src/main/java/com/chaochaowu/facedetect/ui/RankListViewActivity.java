@@ -12,6 +12,7 @@ import android.widget.SimpleAdapter;
 
 import com.chaochaowu.facedetect.R;
 import com.chaochaowu.facedetect.bean.PersonInfo;
+import com.chaochaowu.facedetect.bean.RankPerson;
 import com.chaochaowu.facedetect.ui.FirstActivity;
 
 import org.litepal.crud.DataSupport;
@@ -33,18 +34,18 @@ public class RankListViewActivity extends AppCompatActivity implements AdapterVi
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_rank_list_view);
-		List<PersonInfo> list= DataSupport.order("score").find(PersonInfo.class);
+		List<RankPerson> list= DataSupport.order("score").find(RankPerson.class);
 		//使其倒着输出
 		Collections.reverse(list);
 		int count = 0;
-		for(PersonInfo p:list){
+		for(RankPerson p:list){
 			count+=1;
 			String ranknum = "Rank "+count;
 //			data.add("username:"+p.getUsername()+"颜值："+p.getScore());
 			HashMap<String, String> map = new HashMap<>();
 			String score = "Score:"+p.getScore();
 			map.put("ItemRankNum",ranknum);
-			map.put("ItemTitle", p.getUsername());
+			map.put("ItemTitle", p.getRankname());
 			map.put("ItemDetail", score);
 			retList.add(map);
 		}

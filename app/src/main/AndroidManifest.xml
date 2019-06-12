@@ -19,6 +19,7 @@
 		android:roundIcon="@mipmap/ic_launcher_round"
 		android:supportsRtl="true"
 		android:theme="@style/AppTheme">
+		<activity android:name=".ui.UpRankActivity"></activity>
 		<activity android:name=".ui.RankListViewActivity" />
 		<activity android:name=".ui.SplashActivity" />
 		<activity android:name=".ui.RegisterActivity" />
@@ -30,7 +31,7 @@
 			</intent-filter>
 		</activity>
 		<activity android:name=".ui.FacePlusActivity" />
-		<activity android:name=".ui.FirstActivity"></activity>
+		<activity android:name=".ui.FirstActivity" />
 
 		<provider
 			android:name="android.support.v4.content.FileProvider"

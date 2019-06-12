@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".ui.UpRankActivity"
+	android:background="@color/YellowColor">
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:paddingTop="50dp"
+		android:paddingLeft="20dp"
+		android:paddingRight="20dp">
+
+		<ImageView android:src="@drawable/up_rank"
+			android:layout_width="wrap_content"
+			android:layout_height="100dp"
+			android:layout_marginBottom="24dp"
+			android:layout_gravity="center_horizontal" />
+
+		<!--  Name Label -->
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="8dp"
+			android:layout_marginBottom="8dp">
+			<EditText android:id="@+id/rank_name"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:inputType="textCapWords"
+				android:hint="姓名" />
+		</LinearLayout>
+
+		<!-- Email Label -->
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="8dp"
+			android:layout_marginBottom="8dp">
+			<EditText android:id="@+id/rank_age"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:inputType="textEmailAddress"
+				android:hint="年龄" />
+		</LinearLayout>
+
+		<!-- Password Label -->
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="8dp"
+			android:layout_marginBottom="8dp"/>
+		<!-- Signup Button -->
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="horizontal">
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:orientation="vertical"
+				android:layout_weight="1">
+				<TextView
+				android:id="@+id/rank_face_value"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textColor="#ffff"
+				android:text="颜值："
+				android:textSize="25sp"/>
+				<TextView
+					android:id="@+id/rank_suggest"
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:textColor="#ffff"
+					android:text="建议："
+					android:textSize="20sp"/>
+			</LinearLayout>
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:gravity="center"
+				android:layout_weight="1">
+				<Button
+					android:id="@+id/up_rank_button"
+					android:layout_width="80dp"
+					android:layout_height="80dp"
+					android:gravity="center"
+					android:background="#8BC34A"
+					android:textSize="20sp"
+					android:textColor="#ffff"
+					android:padding="12dp"
+					android:text="上榜"/>
+			</LinearLayout>
+
+		</LinearLayout>
+
+
+	</LinearLayout>
+
+</LinearLayout>

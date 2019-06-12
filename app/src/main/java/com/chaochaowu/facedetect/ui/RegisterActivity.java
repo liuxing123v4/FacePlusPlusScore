@@ -33,7 +33,6 @@ public class RegisterActivity extends AppCompatActivity {
 	//注册按钮
 	private Button registerBtn;
 	//数据库使用
-	private MyDatabaseHelper dbhelper;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -42,7 +41,6 @@ public class RegisterActivity extends AppCompatActivity {
 		passwordEditText = (EditText)findViewById(R.id.password);
 		configPasswordEditText = (EditText)findViewById(R.id.configPassword);
 		registerBtn = (Button) findViewById(R.id.register);
-		dbhelper = new MyDatabaseHelper(this,"Person.db",null,1);
 		//回退事件
 		Connector.getDatabase();
 		link_login = (TextView)findViewById(R.id.link_login);

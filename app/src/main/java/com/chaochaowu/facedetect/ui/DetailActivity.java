@@ -65,25 +65,15 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
-        Intent intent = getIntent();
-        username = intent.getStringExtra("username");
+//        Intent intent = getIntent();
+//        username = intent.getStringExtra("username");
         Log.i(TAG, "onCreate: "+username);
         setContentView(R.layout.activity_detail);
         ButterKnife.bind(this);
         EventBus.getDefault().register(this);
+
     }
 
-    public void setDbhelper(MyDatabaseHelper dbhelper) {
-        this.dbhelper = dbhelper;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -141,23 +131,26 @@ public class DetailActivity extends AppCompatActivity {
         tvEmotion.setText(s);
         final double face_score = Double.parseDouble(String.format("%1.2f", "Male".equals(gender.getValue()) ? maleScore : femaleScore));
         Log.i(TAG, "displayFaceInfo: "+face_score);
-
         button_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                List<PersonInfo>list = DataSupport.where("username=?",username).find(PersonInfo.class);
-                Log.i(TAG, "onClick: "+"当前数据为"+ list.get(0).getScore());
-                double now_score = list.get(0).getScore();
-                if(now_score<face_score){
-                    PersonInfo person = new PersonInfo();
-                    person.setScore(face_score);
-                    Log.i(TAG, "onClick: "+"数据已更新");
-                    person.updateAll("username = ?",username);
-                    Toast.makeText(DetailActivity.this,"恭喜您上榜成功，您离颜值巅峰更近一步",Toast.LENGTH_LONG).show();
-                }else{
-                    Toast.makeText(DetailActivity.this,"不要上榜啦，您颜值报表liao！！！",Toast.LENGTH_LONG).show();
-
-                }
+                Intent intent = new Intent(DetailActivity.this, UpRankActivity.class);
+                intent.putExtra("score",face_score);
+                startActivity(intent);
+//                List<PersonInfo>list = DataSupport.where("username=?",username).find(PersonInfo.class);
+//                Log.i(TAG, "onClick: "+"当前数据为"+ list.get(0).getScore());
+//                double now_score = list.get(0).getScore();
+//                if(now_score<face_score){
+//                    PersonInfo person = new PersonInfo();
+//                    person.setScore(face_score);
+//                    Log.i(TAG, "onClick: "+"数据已更新");
+//                    person.updateAll("username = ?",username);
+//                    Toast.makeText(DetailActivity.this,"恭喜您上榜成功，您离颜值巅峰更近一步",Toast.LENGTH_LONG).show();
+//                }else{
+//                    Toast.makeText(DetailActivity.this,"不要上榜啦，您颜值报表liao！！！",Toast.LENGTH_LONG).show();
+//
+//                }
+//            }
             }
         });
     }
