@@ -1,11 +1,14 @@
 <resources>
-	<string name="app_name">Face++ Score</string>
+	<string name="app_name">Face++</string>
 	<string name="capture">点击拍照</string>
 	<string name="beauty">颜值</string>
 	<string name="emotion">情绪分析：</string>
-	<string name="album">Photo album</string>
+	<string name="rank">Face Rank</string>
 	<string name="camera">Camera</string>
 	<string name="faceplus">Face++</string>
 	<string name="grah">Photography</string>
 	<string name="title_activity_rank_list_view">RankListView</string>
+	<string name="nodata">快去Camera上传颜值吧！</string>
+	<string name="rank_text">颜值排行榜</string>
+
 </resources>

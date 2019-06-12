@@ -1,5 +1,6 @@
 package com.chaochaowu.facedetect.ui;
 
+import android.app.Activity;
 import android.app.ListActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,9 +21,10 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-public class RankListViewActivity extends ListActivity implements AdapterView.OnItemClickListener{
+public class RankListViewActivity extends AppCompatActivity implements AdapterView.OnItemClickListener{
 	List<String> data = new ArrayList<String>();
 	ArrayAdapter adapter;
+	ListActivity rank_list_view;
 	private SimpleAdapter listItemAdapter;
 	private List<HashMap<String, String>> listItems;
 	List<HashMap<String, String>> retList = new ArrayList<HashMap<String, String>>();
@@ -30,30 +32,35 @@ public class RankListViewActivity extends ListActivity implements AdapterView.On
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-//		setContentView(R.layout.activity_rank_list_view);
+		setContentView(R.layout.activity_rank_list_view);
 		List<PersonInfo> list= DataSupport.order("score").find(PersonInfo.class);
 		//使其倒着输出
 		Collections.reverse(list);
+		int count = 0;
 		for(PersonInfo p:list){
+			count+=1;
+			String ranknum = "Rank "+count;
 //			data.add("username:"+p.getUsername()+"颜值："+p.getScore());
 			HashMap<String, String> map = new HashMap<>();
-			String score = ""+p.getScore();
+			String score = "Score:"+p.getScore();
+			map.put("ItemRankNum",ranknum);
 			map.put("ItemTitle", p.getUsername());
 			map.put("ItemDetail", score);
 			retList.add(map);
 		}
-//		ListView listView = (ListView) findViewById(R.id.rank_list_view);
-//		adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,data);
-//		listView.setAdapter(adapter);
-//		listView.setEmptyView(findViewById(R.id.nodata));
-//				listView.setOnItemClickListener(this);
-
+		ListView listView = (ListView) findViewById(R.id.rank_list_view);
 		listItemAdapter = new SimpleAdapter(this, retList,
 				R.layout.list_item,
-				new String[]{"ItemTitle", "ItemDetail"},
-				new int[]{R.id.itemTitle, R.id.itemDetail}
+				new String[]{"ItemRankNum","ItemTitle", "ItemDetail"},
+				new int[]{R.id.itemRankNum,R.id.itemTitle, R.id.itemDetail}
 		);
-		this.setListAdapter(listItemAdapter);
+//		adapter = new ArrayAdapter<String>(this,R.layout.list_item,data);
+		listView.setAdapter(listItemAdapter);
+		listView.setEmptyView(findViewById(R.id.nodata));
+		listView.setOnItemClickListener(this);
+
+
+//		rank_list_view.setListAdapter(listItemAdapter);
 
 
 	}

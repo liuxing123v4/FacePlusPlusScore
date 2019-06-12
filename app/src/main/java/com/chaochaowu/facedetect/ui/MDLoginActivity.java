@@ -72,11 +72,11 @@ public class MDLoginActivity extends AppCompatActivity {
 						Intent intent1 = new Intent(MDLoginActivity.this, DetailActivity.class);
 						intent.putExtra("username",username);
 						startActivity(intent);
-						Toast.makeText(MDLoginActivity.this,"登录成功",Toast.LENGTH_SHORT).show();
+						Toast.makeText(MDLoginActivity.this,"登录成功，赶紧去Camera测试颜值吧！",Toast.LENGTH_SHORT).show();
 						break;
 					} else {
 						Log.i(TAG, "onClick: 报个错");
-						Toast.makeText(MDLoginActivity.this,"登录失败",Toast.LENGTH_SHORT).show();
+						Toast.makeText(MDLoginActivity.this,"账号或者密码错误啦！",Toast.LENGTH_SHORT).show();
 //						AlertDialog.Builder dialog = new AlertDialog.Builder(MDLoginActivity.this);
 //						dialog.setTitle("提醒");
 //						dialog.setMessage("该用户不存在");

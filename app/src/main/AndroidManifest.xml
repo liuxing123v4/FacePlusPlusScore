@@ -14,12 +14,12 @@
 	<application
 		android:name="org.litepal.LitePalApplication"
 		android:allowBackup="true"
-		android:icon="@mipmap/ic_launcher"
+		android:icon="@drawable/app_"
 		android:label="@string/app_name"
 		android:roundIcon="@mipmap/ic_launcher_round"
 		android:supportsRtl="true"
 		android:theme="@style/AppTheme">
-		<activity android:name=".ui.RankListViewActivity"></activity>
+		<activity android:name=".ui.RankListViewActivity" />
 		<activity android:name=".ui.SplashActivity" />
 		<activity android:name=".ui.RegisterActivity" />
 		<activity android:name=".ui.MDLoginActivity">
@@ -30,13 +30,7 @@
 			</intent-filter>
 		</activity>
 		<activity android:name=".ui.FacePlusActivity" />
-		<activity android:name=".ui.FirstActivity">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN" />
-
-				<category android:name="android.intent.category.LAUNCHER" />
-			</intent-filter>
-		</activity>
+		<activity android:name=".ui.FirstActivity"></activity>
 
 		<provider
 			android:name="android.support.v4.content.FileProvider"

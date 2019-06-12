@@ -4,11 +4,24 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	tools:context=".ui.RankListViewActivity">
+	tools:context=".ui.RankListViewActivity"
+	android:background="@color/YellowColor"
+	android:orientation="vertical">
+
+	<ImageView
+		android:layout_width="320dp"
+		android:layout_height="80dp"
+		android:layout_gravity="center_horizontal"
+		android:padding="15dp"
+		android:src="@drawable/rank_text"
+		android:text="@string/rank_text"
+		android:textSize="30sp" />
 	<ListView
 		android:id="@+id/rank_list_view"
 		android:layout_width="match_parent"
-		android:layout_height="match_parent">
+		android:layout_height="match_parent"
+		android:padding="20dp"
+		>
 
 	</ListView>
 	<TextView
@@ -17,7 +30,7 @@
 		android:layout_height="wrap_content"
 		android:gravity="center"
 		android:textSize="18sp"
-		android:text="Nodata">
+		android:text="@string/nodata">
 
 	</TextView>
 </LinearLayout>

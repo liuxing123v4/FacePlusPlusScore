@@ -12,7 +12,7 @@ import org.litepal.LitePal;
 
 public class FirstActivity extends AppCompatActivity {
 	ImageButton camera_img;
-	ImageButton faceplus_button;
+	ImageButton Rank_button;
 
 	private String username;
 
@@ -36,8 +36,8 @@ public class FirstActivity extends AppCompatActivity {
 
 			}
 		});
-		faceplus_button = (ImageButton) findViewById(R.id.faceplus_button);
-		faceplus_button.setOnClickListener(new View.OnClickListener() {
+		Rank_button = (ImageButton) findViewById(R.id.rank_image);
+		Rank_button.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View view) {
 				Intent list = new Intent(FirstActivity.this, RankListViewActivity.class);

@@ -51,13 +51,14 @@
 
 		<android.support.v7.widget.AppCompatButton
 			android:id="@+id/login"
-			android:background="#8BC34A"
+			android:background="#F44336"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:layout_marginTop="24dp"
 			android:layout_marginBottom="24dp"
 			android:padding="12dp"
-			android:text="登录"/>
+			android:text="登录"
+			android:textColor="#ffff"/>
 
 		<TextView android:id="@+id/register"
 			android:layout_width="fill_parent"

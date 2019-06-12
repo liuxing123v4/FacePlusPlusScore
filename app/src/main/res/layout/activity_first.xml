@@ -37,15 +37,15 @@
 					android:baselineAligned="false"
 					app:layout_constraintEnd_toEndOf="parent"
 					app:layout_constraintHorizontal_bias="1.0"
-					app:layout_constraintStart_toEndOf="@+id/album_detect"
+					app:layout_constraintStart_toEndOf="@+id/rank_image"
 					app:layout_constraintTop_toTopOf="parent" />
 
 				<ImageButton
-					android:id="@+id/album_detect"
+					android:id="@+id/rank_image"
 					android:layout_width="60dp"
 					android:layout_height="60dp"
 					android:layout_marginStart="76dp"
-					android:background="@drawable/album"
+					android:background="@drawable/rank"
 					android:baselineAligned="false"
 					app:layout_constraintBottom_toBottomOf="@+id/face_detect"
 					app:layout_constraintStart_toStartOf="parent"
@@ -58,14 +58,14 @@
 					android:layout_height="wrap_content"
 					android:layout_marginTop="20dp"
 					android:layout_marginBottom="8dp"
-					android:text="@string/album"
+					android:text="@string/rank"
 					android:textColor="#ffff"
 					android:textSize="20sp"
 					app:layout_constraintBottom_toBottomOf="parent"
-					app:layout_constraintEnd_toEndOf="@+id/album_detect"
+					app:layout_constraintEnd_toEndOf="@+id/rank_image"
 					app:layout_constraintHorizontal_bias="0.509"
-					app:layout_constraintStart_toStartOf="@+id/album_detect"
-					app:layout_constraintTop_toBottomOf="@+id/album_detect"
+					app:layout_constraintStart_toStartOf="@+id/rank_image"
+					app:layout_constraintTop_toBottomOf="@+id/rank_image"
 					app:layout_constraintVertical_bias="0.0" />
 
 				<TextView

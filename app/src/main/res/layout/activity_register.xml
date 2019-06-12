@@ -30,7 +30,7 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:inputType="textCapWords"
-				android:hint="用户名" />
+				android:hint="注册用户名" />
 		</LinearLayout>
 
 		<!-- Email Label -->
