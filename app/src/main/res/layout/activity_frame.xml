@@ -18,16 +18,16 @@
 			android:layout_weight="1"
 			style="@style/rg_btn_style"
 			android:drawableTop="@drawable/photophy"
-			android:text="摄影"
+			android:text="摄  影"
 			android:textColor="#ffff"/>
 		<RadioButton
 			android:id="@+id/radio_func"
 			android:layout_width="wrap_content"
 			android:layout_weight="1"
 			style="@style/rg_btn_style"
-			android:drawableTop="@drawable/news"
+			android:drawableTop="@drawable/cloths"
 			android:layout_height="wrap_content"
-			android:text="资讯"
+			android:text="穿  搭"
 			android:textColor="#ffff"/>
 		<RadioButton
 			android:id="@+id/radio_setting"
@@ -36,7 +36,7 @@
 			style="@style/rg_btn_style"
 			android:drawableTop="@drawable/beautify"
 			android:layout_height="wrap_content"
-			android:text="美颜"
+			android:text="美  颜"
 			android:textColor="#ffff"/>
 	</RadioGroup>
 

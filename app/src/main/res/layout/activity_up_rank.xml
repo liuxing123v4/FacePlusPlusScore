@@ -81,17 +81,29 @@
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
 				android:gravity="center"
+				android:orientation="vertical"
 				android:layout_weight="1">
 				<Button
 					android:id="@+id/up_rank_button"
-					android:layout_width="80dp"
-					android:layout_height="80dp"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:gravity="center"
+					android:background="#8BC34A"
+					android:textSize="20sp"
+					android:layout_marginBottom="20dp"
+					android:textColor="#ffff"
+					android:padding="12dp"
+					android:text="上      榜"/>
+				<Button
+					android:id="@+id/to_faceplus"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
 					android:gravity="center"
 					android:background="#8BC34A"
 					android:textSize="20sp"
 					android:textColor="#ffff"
 					android:padding="12dp"
-					android:text="上榜"/>
+					android:text="颜 值 ++"/>
 			</LinearLayout>
 
 		</LinearLayout>

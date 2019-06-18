@@ -31,5 +31,8 @@
 		<item name="android:singleLine">true</item>
 		<item name="android:layout_weight">1.0</item>
 	</style>
+	<style name="another_button">
+		<item name="android:background">@drawable/shape</item>
+	</style>
 
 </resources>

@@ -52,11 +52,14 @@ public class UpRankActivity extends AppCompatActivity {
 		rank_face_value.setText("颜值:"+rankscore);
 
 		if(rankscore<68){
-			rank_suggest.setText("老铁:,\n"+
+			rank_suggest.setText(
+					"老铁:,\n"+
 					"去face++逛逛吧,\n"+
-					"颜值这个东西强求不得");
+					"颜值不是你,\n"+
+					"想买就能买");
 		}else{
-			rank_suggest.setText("喜欢一个人,\n" +
+			rank_suggest.setText(
+					"喜欢一个人,\n" +
 					"始于颜值,\n" +
 					"陷于才华,\n" +
 					"忠于人品,\n"+

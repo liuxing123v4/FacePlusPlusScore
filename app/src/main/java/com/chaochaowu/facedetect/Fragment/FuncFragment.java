@@ -23,7 +23,7 @@ public class FuncFragment extends Fragment {
 		final WebView webView = getView().findViewById(R.id.func_webview);
 		webView.getSettings().setJavaScriptEnabled(true);
 		webView.setWebViewClient(new WebViewClient());
-		webView.loadUrl("https://thispersondoesnotexist.com/");
+		webView.loadUrl("http://www.lofficiel.cn/fashion/");
 
 //		webView.loadUrl("https://pixabay.com/");
 // 		webView.loadUrl("https://www.xiaohongshu.com/explore");

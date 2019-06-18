@@ -6,12 +6,13 @@
 	<string name="rank">Face Rank</string>
 	<string name="camera">Camera</string>
 	<string name="faceplus">Face++</string>
-	<string name="grah">Photography</string>
+	<string name="grah">Meet Strangers</string>
 	<string name="title_activity_rank_list_view">RankListView</string>
 	<string name="nodata">快去Camera上传颜值吧！</string>
 	<string name="rank_text">颜值排行榜</string>
 
 	<!-- TODO: Remove or change this placeholder text -->
 	<string name="hello_blank_fragment">Hello blank fragment</string>
+	<string name="splash_text">\"喜欢一个人,\\n\" + \t\t\t\t\t\"始于颜值,\\n\" + \t\t\t\t\t\"陷于才华,\\n\" + \t\t\t\t\t\"忠于人品,\\n\"+ \t\t\t\t\t\"快去上榜吧！\"</string>
 
 </resources>

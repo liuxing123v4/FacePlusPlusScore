@@ -15,7 +15,7 @@ public class FirstActivity extends AppCompatActivity {
 	ImageButton camera_img;
 	ImageButton Rank_button;
 	ImageButton faceplus_button;
-
+	ImageButton graph_button;
 	private String username;
 
 	final String TAG ="First.activity";
@@ -51,6 +51,15 @@ public class FirstActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View view) {
 				Intent intent = new Intent(FirstActivity.this, FrameActivity.class);
+				startActivity(intent);
+			}
+		});
+
+		graph_button = (ImageButton)findViewById(R.id.graph_button);
+		graph_button.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Intent intent = new Intent(FirstActivity.this, WebViewActivity.class);
 				startActivity(intent);
 			}
 		});
