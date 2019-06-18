@@ -51,7 +51,7 @@
 
 		<android.support.v7.widget.AppCompatButton
 			android:id="@+id/login"
-			android:background="#F44336"
+			android:background="@color/GreenColor"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:layout_marginTop="24dp"
@@ -65,6 +65,7 @@
 			android:layout_height="wrap_content"
 			android:layout_marginBottom="24dp"
 			android:text="还没有账号?"
+			android:textColor="@color/white"
 			android:gravity="center"
 			android:textSize="16dip"/>
 

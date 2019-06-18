@@ -14,24 +14,23 @@
 	<application
 		android:name="org.litepal.LitePalApplication"
 		android:allowBackup="true"
-		android:icon="@mipmap/app_"
+		android:icon="@drawable/app_icon"
 		android:label="@string/app_name"
-		android:roundIcon="@mipmap/ic_launcher_round"
+		android:roundIcon="@mipmap/app_icon_round"
 		android:supportsRtl="true"
 		android:theme="@style/AppTheme">
-		<activity android:name=".Fragment.FrameActivity">
+		<activity android:name=".ui.StrangerActivity"></activity>
+		<activity android:name=".Fragment.FrameActivity"></activity>
+		<activity android:name=".ui.WebViewActivity"></activity>
+		<activity android:name=".ui.UpRankActivity" />
+		<activity android:name=".ui.RankListViewActivity" />
+		<activity android:name=".ui.SplashActivity">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
-		<activity android:name=".ui.WebViewActivity">
-
-		</activity>
-		<activity android:name=".ui.UpRankActivity" />
-		<activity android:name=".ui.RankListViewActivity" />
-		<activity android:name=".ui.SplashActivity" />
 		<activity android:name=".ui.RegisterActivity" />
 		<activity android:name=".ui.MDLoginActivity" />
 		<activity android:name=".ui.FacePlusActivity" />

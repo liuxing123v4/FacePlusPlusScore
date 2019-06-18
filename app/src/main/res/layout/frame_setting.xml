@@ -5,11 +5,9 @@
 	android:layout_height="match_parent"
 	android:orientation="vertical"
 	>
-	<TextView
-		android:id="@+id/settingTextView1"
+	<WebView
+		android:id="@+id/setting_webview"
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:gravity="center"
-		android:text="Setting"
-		android:textSize="30sp"/>
+		android:layout_height="match_parent">
+	</WebView>
 </LinearLayout>

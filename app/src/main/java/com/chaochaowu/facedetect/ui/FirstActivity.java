@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.chaochaowu.facedetect.Fragment.FrameActivity;
 import com.chaochaowu.facedetect.R;
 
 import org.litepal.LitePal;
@@ -46,10 +47,14 @@ public class FirstActivity extends AppCompatActivity {
 			}
 		});
 		faceplus_button = (ImageButton)findViewById(R.id.faceplus_button);
-
-
+		faceplus_button.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Intent intent = new Intent(FirstActivity.this, FrameActivity.class);
+				startActivity(intent);
+			}
+		});
 
 	}
-
 }
 

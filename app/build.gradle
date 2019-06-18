@@ -28,7 +28,6 @@ android {
 }
 
 dependencies {
-    implementation "de.hdodenhof:circleimageview:2.1.0"
     implementation "org.litepal.android:core:1.4.1"
     implementation 'cn.bmob.android:bmob-sdk:3.7.3-rc1'
     implementation "io.reactivex.rxjava2:rxjava:2.2.2"
@@ -40,7 +39,7 @@ dependencies {
     implementation 'org.jsoup:jsoup:1.11.3'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     //noinspection GradleCompatible
-    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:appcompat-v7:27.0.1'
 
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     implementation 'com.android.support:support-v4:27.1.1'
@@ -64,5 +63,4 @@ dependencies {
     implementation 'com.github.navasmdc:MaterialDesign:1.5@aar'
     implementation 'com.android.support:recyclerview-v7:27.0.1'
     implementation 'org.greenrobot:eventbus:3.1.1'
-    implementation 'com.github.hackware1993:MagicIndicator:1.5.0'
 }

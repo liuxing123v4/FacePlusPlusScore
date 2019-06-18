@@ -56,7 +56,7 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:inputType="textPassword"
-				android:hint="请再次输入密码"/>
+				android:hint="请再次输入密码" />
 		</LinearLayout>
 
 		<!-- Signup Button -->
@@ -65,6 +65,7 @@
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:background="#8BC34A"
+			android:textColor="@color/white"
 			android:layout_marginTop="24dp"
 			android:layout_marginBottom="24dp"
 			android:padding="12dp"
@@ -74,6 +75,7 @@
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:layout_marginBottom="24dp"
+			android:textColor="@color/white"
 			android:text="已有账号? 登录"
 			android:gravity="center"
 
