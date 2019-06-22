@@ -19,7 +19,6 @@ public class SplashActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_splash);
-		getSupportActionBar().hide();
 
 //		splash_text = (TextView)findViewById(R.id.splash_text);
 //		splash_text.setText(

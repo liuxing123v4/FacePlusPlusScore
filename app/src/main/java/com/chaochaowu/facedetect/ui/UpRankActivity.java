@@ -7,7 +7,10 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.chaochaowu.facedetect.Fragment.FrameActivity;
 import com.chaochaowu.facedetect.R;
 import com.chaochaowu.facedetect.bean.FaceppBean;
 import com.chaochaowu.facedetect.bean.PersonInfo;
@@ -35,35 +39,40 @@ public class UpRankActivity extends AppCompatActivity {
 	private EditText realname;
 	private EditText realage;
 	private Button up_rank_button;
-	private String rankname,rankage;
+	private String rankname, rankage;
 	private TextView rank_face_value;
 	private TextView rank_suggest;
+	private Button to_faceplus;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_up_rank);
+		Toolbar toolbar = (Toolbar) findViewById(R.id.up_rank_toolbar);
+		setSupportActionBar(toolbar);
 		Intent intent = getIntent();
 		final Double rankscore = intent.getDoubleExtra("score", 0.0);
-		realname = (EditText)findViewById(R.id.rank_name);
-		realage = (EditText)findViewById(R.id.rank_age);
-		rank_face_value = (TextView)findViewById(R.id.rank_face_value);
-		rank_suggest = (TextView)findViewById(R.id.rank_suggest);
+		realname = (EditText) findViewById(R.id.rank_name);
+		realage = (EditText) findViewById(R.id.rank_age);
+		rank_face_value = (TextView) findViewById(R.id.rank_face_value);
+		rank_suggest = (TextView) findViewById(R.id.rank_suggest);
 		up_rank_button = (Button) findViewById(R.id.up_rank_button);
-		rank_face_value.setText("颜值:"+rankscore);
+		to_faceplus = (Button) findViewById(R.id.to_faceplus);
+		rank_face_value.setText("颜值:" + rankscore);
 
-		if(rankscore<68){
+		if (rankscore < 65) {
 			rank_suggest.setText(
-					"老铁:,\n"+
-					"去face++逛逛吧,\n"+
-					"颜值不是你,\n"+
-					"想买就能买");
-		}else{
+					"老铁:\n" +
+							"去face++逛逛吧,\n" +
+							"颜值不是你,\n" +
+							"想买就能买");
+		} else {
 			rank_suggest.setText(
 					"喜欢一个人,\n" +
-					"始于颜值,\n" +
-					"陷于才华,\n" +
-					"忠于人品,\n"+
-					"快去上榜吧！");
+							"始于颜值,\n" +
+							"陷于才华,\n" +
+							"忠于人品,\n" +
+							"快去上榜吧！");
 		}
 
 
@@ -100,7 +109,45 @@ public class UpRankActivity extends AppCompatActivity {
 
 		});
 
+		to_faceplus.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Intent intent2 = new Intent(UpRankActivity.this, FrameActivity.class);
+				startActivity(intent2);
+			}
+		});
+
+	}
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.toolbar, menu);
+		return true;
 	}
 
-
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+			case R.id.main_page:
+				Toast.makeText(this, "返回主页面", Toast.LENGTH_SHORT).show();
+				Intent intent = new Intent(UpRankActivity.this,
+						FirstActivity.class);
+				startActivity(intent);
+				break;
+			case R.id.face_item_detect:
+				Toast.makeText(this, "返回颜值测评", Toast.LENGTH_SHORT).show();
+				Intent intent1 = new Intent(UpRankActivity.this,
+						MainActivity.class);
+				startActivity(intent1);
+				break;
+			case R.id.item_rank:
+				Toast.makeText(this, "返回颜值排行榜", Toast.LENGTH_SHORT).show();
+				Intent intent2 = new Intent(UpRankActivity.this,
+						RankListViewActivity.class);
+				startActivity(intent2);
+				break;
+			default:
+		}
+		return true;
+	}
 }
+
+
+

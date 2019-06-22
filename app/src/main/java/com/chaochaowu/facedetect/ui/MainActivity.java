@@ -86,7 +86,6 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getSupportActionBar().hide();
         ButterKnife.bind(this);
         DaggerMainActivityComponent.builder()
                 .mainPresenterModule(new MainPresenterModule(this))
@@ -173,9 +172,11 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         if (!Utils.checkAndRequestPermission(this, PERMISSIONS_REQUEST_CODE)) {
             return;
         }
+
         Intent intent = new Intent();
         intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
         String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/img";
+
         if (new File(path).exists()) {
             try {
                 new File(path).createNewFile();

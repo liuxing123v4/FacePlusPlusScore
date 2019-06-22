@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
+	<item
+		android:id="@+id/face_item_detect1"
+		android:icon="@drawable/face_detect"
+		app:showAsAction="always"
+		android:title="颜值测试" />
+	<item
+		android:id="@+id/main_page1"
+		android:icon="@drawable/home"
+		app:showAsAction="always"
+		android:title="主页"
+		/>
+
+</menu>

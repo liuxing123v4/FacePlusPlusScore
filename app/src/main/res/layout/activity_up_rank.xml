@@ -5,12 +5,22 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	tools:context=".ui.UpRankActivity"
+	android:orientation="vertical"
 	android:background="@color/YellowColor">
+	<android.support.v7.widget.Toolbar
+		android:id="@+id/up_rank_toolbar"
+		app:title="此处不上更待何时"
+		app:titleTextColor="@color/white"
+		android:layout_width="match_parent"
+		android:layout_height="?attr/actionBarSize"
+		android:background="@color/YellowColor"
+		>
+	</android.support.v7.widget.Toolbar>
 	<LinearLayout
 		android:orientation="vertical"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:paddingTop="50dp"
+		android:paddingTop="20dp"
 		android:paddingLeft="20dp"
 		android:paddingRight="20dp">
 

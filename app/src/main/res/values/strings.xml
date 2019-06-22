@@ -8,7 +8,7 @@
 	<string name="faceplus">Face++</string>
 	<string name="grah">Meet Strangers</string>
 	<string name="title_activity_rank_list_view">RankListView</string>
-	<string name="nodata">快去Camera上传颜值吧！</string>
+	<string name="nodata">返回主页 \n 点击Camera \n快去上传颜值吧！</string>
 	<string name="rank_text">颜值排行榜</string>
 
 	<!-- TODO: Remove or change this placeholder text -->

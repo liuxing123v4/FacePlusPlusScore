@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
+	<item
+		android:id="@+id/main_page"
+		android:icon="@drawable/home"
+		app:showAsAction="ifRoom"
+		android:title="主页"
+		/>
+	<item
+		android:id="@+id/item_rank"
+		android:icon="@drawable/rank"
+		app:showAsAction="never"
+		android:title="排名"
+		/>
+	<item
+		android:id="@+id/face_item_detect"
+		android:icon="@drawable/face_detect"
+		app:showAsAction="never"
+		android:title="颜值测试" />
+
+</menu>

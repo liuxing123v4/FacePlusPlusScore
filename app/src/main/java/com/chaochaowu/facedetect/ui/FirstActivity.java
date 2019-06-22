@@ -23,7 +23,6 @@ public class FirstActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_first);
-		getSupportActionBar().hide();
 		LitePal.initialize(this);
 		camera_img = (ImageButton)findViewById(R.id.face_detect);
 		Intent intent = getIntent();

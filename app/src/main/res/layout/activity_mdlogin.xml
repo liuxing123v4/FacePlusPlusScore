@@ -51,7 +51,7 @@
 
 		<android.support.v7.widget.AppCompatButton
 			android:id="@+id/login"
-			android:background="@color/GreenColor"
+			android:background="#FF8C00"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:layout_marginTop="24dp"

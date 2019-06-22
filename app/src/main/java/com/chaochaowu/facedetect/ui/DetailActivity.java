@@ -64,7 +64,6 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide();
 //        Intent intent = getIntent();
 //        username = intent.getStringExtra("username");
         Log.i(TAG, "onCreate: "+username);
@@ -123,9 +122,9 @@ public class DetailActivity extends AppCompatActivity {
                 .append("愤怒 ").append(emotion.getAnger()).append("%")
                 .append("        厌恶 ").append(emotion.getDisgust()).append("%")
                 .append("\n恐惧 ").append(emotion.getFear()).append("%")
-                .append("        高兴 ").append(emotion.getHappiness()).append("%")
+                .append("          高兴 ").append(emotion.getHappiness()).append("%")
                 .append("\n平静 ").append(emotion.getNeutral()).append("%")
-                .append("        伤心 ").append(emotion.getSadness()).append("%")
+                .append("       伤心 ").append(emotion.getSadness()).append("%")
                 .append("\n惊讶 ").append(emotion.getSurprise()).append("%\n\n")
                 .toString();
         tvEmotion.setText(s);

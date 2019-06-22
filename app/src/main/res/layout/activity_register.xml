@@ -10,15 +10,16 @@
 		android:orientation="vertical"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:paddingTop="56dp"
+		android:paddingTop="30dp"
 		android:paddingLeft="24dp"
 		android:paddingRight="24dp">
 
-		<ImageView android:src="@drawable/font"
+		<ImageView
 			android:layout_width="wrap_content"
 			android:layout_height="100dp"
+			android:layout_gravity="center_horizontal"
 			android:layout_marginBottom="24dp"
-			android:layout_gravity="center_horizontal" />
+			android:src="@drawable/font" />
 
 		<!--  Name Label -->
 		<LinearLayout
@@ -64,7 +65,7 @@
 			android:id="@+id/register"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:background="#8BC34A"
+			android:background="#FF8C00"
 			android:textColor="@color/white"
 			android:layout_marginTop="24dp"
 			android:layout_marginBottom="24dp"

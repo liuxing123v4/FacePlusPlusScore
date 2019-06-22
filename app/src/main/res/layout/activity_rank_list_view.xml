@@ -7,7 +7,16 @@
 	tools:context=".ui.RankListViewActivity"
 	android:background="@color/YellowColor"
 	android:orientation="vertical">
+	<android.support.v7.widget.Toolbar
+		android:id="@+id/rank_list_toolbar"
+		app:title="谁是最靓的仔"
+		app:titleTextColor="@color/white"
+		android:layout_width="match_parent"
+		android:layout_height="?attr/actionBarSize"
+		android:background="@color/YellowColor"
+		>
 
+	</android.support.v7.widget.Toolbar>
 	<ImageView
 		android:layout_width="320dp"
 		android:layout_height="80dp"
@@ -20,9 +29,8 @@
 		android:id="@+id/rank_list_view"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		android:padding="20dp"
+		android:padding="30dp"
 		>
-
 	</ListView>
 	<TextView
 		android:id="@+id/nodata"
